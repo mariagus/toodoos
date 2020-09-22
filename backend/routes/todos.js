@@ -9,17 +9,28 @@ router.route("/").get((req, res) => {
 
 router.route("/add").post((req, res) => {
   const todoItem = req.body.todoItem;
-  const todoId = req.body.todoId;
+
   const completed = req.body.completed;
 
   const newTodo = new Todo({
     todoItem,
-    todoId,
     completed,
   });
   newTodo
     .save()
     .then(() => res.json("Todo Added!"))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/:id").get((req, res) => {
+  Todo.findById(req.params.id)
+    .then((todo) => res.json(todo))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/:id").delete((req, res) => {
+  Todo.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Todo deleted."))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
