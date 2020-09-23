@@ -1,37 +1,45 @@
-import React, { useState } from "react";
-//import router from "../backend/routes/todos";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import APIHelper from "./APIHelper.js";
 
 function App() {
   const [todoText, setTodoText] = useState("");
   const [todos, setTodos] = useState([]);
-  //const [completedTodos, setCompletedTodos] = useState([]); make new component that will map/filter the todo.completed===true.
 
-  const addTodoHandler = (e) => {
+  useEffect(() => {
+    const fetchTodoAndSetTodos = async () => {
+      const todos = await APIHelper.getAllTodos();
+      setTodos(todos);
+    };
+    fetchTodoAndSetTodos();
+  }, []);
+
+  const addTodoHandler = async (e) => {
     e.preventDefault();
-    if (todoText.trim().length > 0) {
-      todos.push({
-        todoText,
-        id: Math.random() * Date.now(),
-        completed: false,
-      });
-    }
+
+    const newTodo = await APIHelper.addTodoHandler(todoText);
+    setTodos([...todos, newTodo]);
     setTodoText("");
   };
 
-  const handleDelete = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+  const handleToggle = async (e, id) => {
+    e.stopPropagation();
+    const payload = {
+      completed: !todos.find((todo) => todo._id === id).completed,
+    };
+    const updatedTodo = await APIHelper.handleToggle(id, payload);
+    setTodos(todos.map((todo) => (todo._id === id ? updatedTodo : todo)));
+  };
+  const handleDelete = async (e, id) => {
+    try {
+      e.stopPropagation();
+      await APIHelper.handleDelete(id);
+      setTodos(todos.filter(({ _id: i }) => id !== i));
+    } catch (err) {}
+
+    //setTodos(todos.filter((todo) => todo.id !== id));
   };
   // here we need to rerender an array with the changed states of completed.
-  const handleToggle = (id) => {
-    const updatedTodos = todos.map((t) => {
-      if (t.id === id) {
-        return { ...t, completed: !t.completed };
-      }
-      return t;
-    });
-    setTodos(updatedTodos);
-  };
 
   return (
     <div className="App">
@@ -50,28 +58,28 @@ function App() {
               setTodoText(event.target.value);
             }}
           />
-          <button className="addButton" onClick={addTodoHandler}>
+          <button type="button" className="addButton" onClick={addTodoHandler}>
             +
           </button>
         </div>
       </header>
       <ul className="todoList">
-        {todos.map((todo) => (
-          <li key={todo.id}>
+        {todos.map(({ _id, todoItem, completed }, i) => (
+          <li key={i}>
             <p
               className="listItems"
-              onClick={() => handleToggle(todo.id)}
+              onClick={(e) => handleToggle(e, _id)}
               style={
-                todo.completed
+                completed
                   ? { textDecoration: "line-through", color: "#d9d9d9" }
                   : { textDecoration: "none" }
               }
             >
-              {todo.todoText}
+              {todoItem}
             </p>
             <button
               className="deleteTodo"
-              onClick={() => handleDelete(todo.id)}
+              onClick={(e) => handleDelete(e, _id)}
             >
               -
             </button>

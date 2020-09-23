@@ -9,7 +9,6 @@ router.route("/").get((req, res) => {
 
 router.route("/add").post((req, res) => {
   const todoItem = req.body.todoItem;
-
   const completed = req.body.completed;
 
   const newTodo = new Todo({
@@ -18,13 +17,19 @@ router.route("/add").post((req, res) => {
   });
   newTodo
     .save()
-    .then(() => res.json("Todo Added!"))
+    .then(() => res.json(newTodo))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
 router.route("/:id").get((req, res) => {
   Todo.findById(req.params.id)
     .then((todo) => res.json(todo))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/:id").put((req, res) => {
+  Todo.findByIdAndUpdate(req.params.id)
+    .then((todos) => res.json(todos))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
