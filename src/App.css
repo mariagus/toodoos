@@ -1,9 +1,9 @@
 .App {
   text-align: center;
+  animation: fadeIn ease 3s;
 }
 
 .App-header {
-  animation: fadeIn ease 3s;
   font-family: "Major Mono Display", monospace;
   display: flex;
   flex-direction: column;
