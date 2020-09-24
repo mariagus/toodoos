@@ -62,22 +62,22 @@ function App() {
         </div>
       </header>
       <ul className="todoList">
-        {todos.map(({ _id, todoItem, completed }, i) => (
+        {todos.map((todo, i) => (
           <li key={i}>
             <p
               className="listItems"
-              onClick={(e) => handleToggle(e, _id)}
+              onClick={(e) => handleToggle(e, todo._id)}
               style={
-                completed
+                todo.completed
                   ? { textDecoration: "line-through", color: "#d9d9d9" }
                   : { textDecoration: "none" }
               }
             >
-              {todoItem}
+              {todo.todoItem}
             </p>
             <button
               className="deleteTodo"
-              onClick={(e) => handleDelete(e, _id)}
+              onClick={(e) => handleDelete(e, todo._id)}
             >
               -
             </button>
