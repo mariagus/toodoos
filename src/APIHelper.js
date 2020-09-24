@@ -13,8 +13,10 @@ async function handleDelete(id) {
   return message;
 }
 async function handleToggle(id, payload) {
-  const { data: todo } = await axios.put(`${API_URL}${id}`, payload);
-  return todo;
+  console.log({ id, payload });
+  const { data: newTodo } = await axios.put(`${API_URL}${id}`, payload);
+  console.log({ newTodo });
+  return newTodo;
 }
 
 async function getAllTodos() {

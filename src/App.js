@@ -25,6 +25,8 @@ function App() {
   const handleToggle = async (e, id) => {
     e.stopPropagation();
     const payload = {
+      _id: todos.find((todo) => todo._id === id).id,
+      todoItem: todos.find((todo) => todo._id === id).todoItem,
       completed: !todos.find((todo) => todo._id === id).completed,
     };
     const updatedTodo = await APIHelper.handleToggle(id, payload);
