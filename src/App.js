@@ -28,18 +28,16 @@ function App() {
       completed: !todos.find((todo) => todo._id === id).completed,
     };
     const updatedTodo = await APIHelper.handleToggle(id, payload);
-    setTodos(todos.map((todo) => (todo._id === id ? updatedTodo : todo)));
-  };
-  const handleDelete = async (e, id) => {
-    try {
-      e.stopPropagation();
-      await APIHelper.handleDelete(id);
-      setTodos(todos.filter(({ _id: i }) => id !== i));
-    } catch (err) {}
+    let updated = todos.map((todo) => (todo._id === id ? updatedTodo : todo));
 
-    //setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos(updated);
   };
-  // here we need to rerender an array with the changed states of completed.
+
+  const handleDelete = async (e, id) => {
+    e.stopPropagation();
+    await APIHelper.handleDelete(id);
+    setTodos(todos.filter(({ _id: i }) => id !== i));
+  };
 
   return (
     <div className="App">

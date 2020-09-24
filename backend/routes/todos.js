@@ -27,15 +27,22 @@ router.route("/:id").get((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/:id").put((req, res) => {
-  Todo.findByIdAndUpdate(req.params.id)
-    .then((todos) => res.json(todos))
-    .catch((err) => res.status(400).json("Error: " + err));
-});
-
 router.route("/:id").delete((req, res) => {
   Todo.findByIdAndDelete(req.params.id)
     .then(() => res.json("Todo deleted."))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/:id").put((req, res) => {
+  Todo.findById(req.params.id)
+    .then((todo) => {
+      todo.todoItem = req.body.todoItem;
+      todo.completed = req.body.completed;
+      todo
+        .save()
+        .then((todo) => res.json(todo))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
