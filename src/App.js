@@ -68,12 +68,12 @@ function App() {
           <li key={i}>
             <p
               className="listItems"
-              onClick={(e) => handleToggle(e, todo._id)}
               style={
                 todo.completed
                   ? { textDecoration: "line-through", color: "#d9d9d9" }
                   : { textDecoration: "none" }
               }
+              onClick={(e) => handleToggle(e, todo._id)}
             >
               {todo.todoItem}
             </p>
