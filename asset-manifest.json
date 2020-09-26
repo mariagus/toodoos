@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/toodoos/static/css/main.7302a748.chunk.css",
-    "main.js": "/toodoos/static/js/main.b7973810.chunk.js",
-    "main.js.map": "/toodoos/static/js/main.b7973810.chunk.js.map",
+    "main.js": "/toodoos/static/js/main.69130de5.chunk.js",
+    "main.js.map": "/toodoos/static/js/main.69130de5.chunk.js.map",
     "runtime-main.js": "/toodoos/static/js/runtime-main.0f2a035e.js",
     "runtime-main.js.map": "/toodoos/static/js/runtime-main.0f2a035e.js.map",
     "static/js/2.4656ea7c.chunk.js": "/toodoos/static/js/2.4656ea7c.chunk.js",
     "static/js/2.4656ea7c.chunk.js.map": "/toodoos/static/js/2.4656ea7c.chunk.js.map",
     "index.html": "/toodoos/index.html",
-    "precache-manifest.56a35f8f90670827ec15e7795d23b175.js": "/toodoos/precache-manifest.56a35f8f90670827ec15e7795d23b175.js",
+    "precache-manifest.508ec5f400eb6c5661ab17a22afdb383.js": "/toodoos/precache-manifest.508ec5f400eb6c5661ab17a22afdb383.js",
     "service-worker.js": "/toodoos/service-worker.js",
     "static/css/main.7302a748.chunk.css.map": "/toodoos/static/css/main.7302a748.chunk.css.map",
     "static/js/2.4656ea7c.chunk.js.LICENSE.txt": "/toodoos/static/js/2.4656ea7c.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0f2a035e.js",
     "static/js/2.4656ea7c.chunk.js",
     "static/css/main.7302a748.chunk.css",
-    "static/js/main.b7973810.chunk.js"
+    "static/js/main.69130de5.chunk.js"
   ]
 }
