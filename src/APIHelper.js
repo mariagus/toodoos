@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/todos/";
+const API_URL = "https://too-doos.herokuapp.com/todos/";
 
 async function addTodoHandler(todoItem) {
   const { data: newTodo } = await axios.post(`${API_URL}/add`, {
