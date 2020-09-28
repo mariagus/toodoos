@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import APIHelper from "./APIHelper.js";
+import Login from "./login";
+import Logout from "./logout";
 
 function App() {
   const [todoText, setTodoText] = useState("");
@@ -43,6 +45,8 @@ function App() {
 
   return (
     <div className="App">
+      <Login />
+      <Logout />
       <header className="App-header fade-in">
         <h1>
           T<div style={{ color: "#a8a8a8" }}>oo</div>D
