@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/toodoos/static/css/main.7302a748.chunk.css",
-    "main.js": "/toodoos/static/js/main.2f834caf.chunk.js",
-    "main.js.map": "/toodoos/static/js/main.2f834caf.chunk.js.map",
+    "main.js": "/toodoos/static/js/main.6da19985.chunk.js",
+    "main.js.map": "/toodoos/static/js/main.6da19985.chunk.js.map",
     "runtime-main.js": "/toodoos/static/js/runtime-main.0f2a035e.js",
     "runtime-main.js.map": "/toodoos/static/js/runtime-main.0f2a035e.js.map",
-    "static/js/2.4656ea7c.chunk.js": "/toodoos/static/js/2.4656ea7c.chunk.js",
-    "static/js/2.4656ea7c.chunk.js.map": "/toodoos/static/js/2.4656ea7c.chunk.js.map",
+    "static/js/2.0540b7ff.chunk.js": "/toodoos/static/js/2.0540b7ff.chunk.js",
+    "static/js/2.0540b7ff.chunk.js.map": "/toodoos/static/js/2.0540b7ff.chunk.js.map",
     "index.html": "/toodoos/index.html",
-    "precache-manifest.3707dd7c12152d2d8e18b5cd08b94f9c.js": "/toodoos/precache-manifest.3707dd7c12152d2d8e18b5cd08b94f9c.js",
+    "precache-manifest.8a34aca7a98a7abc0414733ca19973a0.js": "/toodoos/precache-manifest.8a34aca7a98a7abc0414733ca19973a0.js",
     "service-worker.js": "/toodoos/service-worker.js",
     "static/css/main.7302a748.chunk.css.map": "/toodoos/static/css/main.7302a748.chunk.css.map",
-    "static/js/2.4656ea7c.chunk.js.LICENSE.txt": "/toodoos/static/js/2.4656ea7c.chunk.js.LICENSE.txt"
+    "static/js/2.0540b7ff.chunk.js.LICENSE.txt": "/toodoos/static/js/2.0540b7ff.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0f2a035e.js",
-    "static/js/2.4656ea7c.chunk.js",
+    "static/js/2.0540b7ff.chunk.js",
     "static/css/main.7302a748.chunk.css",
-    "static/js/main.2f834caf.chunk.js"
+    "static/js/main.6da19985.chunk.js"
   ]
 }
