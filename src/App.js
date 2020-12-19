@@ -45,8 +45,6 @@ function App() {
 
   return (
     <div className="App">
-      <Login />
-      <Logout />
       <header className="App-header fade-in">
         <h1>
           T<div style={{ color: "#a8a8a8" }}>oo</div>D
