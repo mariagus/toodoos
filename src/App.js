@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import APIHelper from "./APIHelper.js";
-import Login from "./login";
-import Logout from "./logout";
 
 function App() {
   const [todoText, setTodoText] = useState("");
